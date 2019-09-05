@@ -27,16 +27,9 @@ class MyApp extends StatelessWidget {
               children: PermissionGroup.values
                   .where((PermissionGroup permission) {
                     if (Platform.isIOS) {
-                      return permission != PermissionGroup.unknown &&
-                          permission != PermissionGroup.sms &&
-                          permission != PermissionGroup.storage &&
-                          permission !=
-                              PermissionGroup.ignoreBatteryOptimizations;
+                      return permission != PermissionGroup.unknown;
                     } else {
-                      return permission != PermissionGroup.unknown &&
-                          permission != PermissionGroup.mediaLibrary &&
-                          permission != PermissionGroup.photos &&
-                          permission != PermissionGroup.reminders;
+                      return permission != PermissionGroup.unknown;
                     }
                   })
                   .map((PermissionGroup permission) =>
